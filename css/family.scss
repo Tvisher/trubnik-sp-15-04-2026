@@ -105,10 +105,14 @@
     font-weight: 700;
     line-height: 110%;
     margin-bottom: 40px;
+    a:hover {
+      color: #ed6506;
+    }
   }
 
   p {
     margin-bottom: 0;
+    text-align: justify;
 
     &:not(:last-child) {
       margin-bottom: 18px;
