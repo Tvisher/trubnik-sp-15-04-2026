@@ -275,8 +275,7 @@ body {
   width: 240px;
   height: auto;
 
-  img {
-  }
+  img {}
 }
 
 .footer__content {
@@ -365,6 +364,7 @@ footer {
   background-image: url(../img/sidebar-bg.svg);
   background-repeat: no-repeat;
   background-position: bottom;
+  overflow: auto;
 }
 
 .close-btn {
@@ -383,7 +383,16 @@ footer {
 .sidebar-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
 }
 
 .sidebar-menu__link {
@@ -400,6 +409,30 @@ footer {
   }
 }
 
+.sidebar-menu__link_inner {
+  border-left: 1px solid #0F2B46;
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 0 0.75rem 1.25rem;
+
+  a {
+    color: #112d45;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: #ed6506;
+      text-decoration: underline;
+    }
+  }
+}
+
 .card-modal {
   z-index: 10;
   position: fixed;
@@ -411,7 +444,7 @@ footer {
   backdrop-filter: blur(0.75rem);
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 1.25rem;
   padding-top: 6.25rem;
   opacity: 0;
   visibility: hidden;
@@ -522,6 +555,7 @@ footer {
   html {
     font-size: 16px;
   }
+
   .main-screen__content {
     padding-left: 0;
   }
@@ -640,6 +674,14 @@ footer {
 
   .sidebar-menu__content {
     padding: 12px;
+  }
+
+  .sidebar-menu__link_inner {
+    border-left: none;
+    border-right: 1px solid #0F2B46;
+    padding-left: 0;
+    padding-right: 1.25rem;
+
   }
 }
 

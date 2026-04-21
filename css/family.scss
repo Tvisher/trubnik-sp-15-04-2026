@@ -13,8 +13,10 @@
   }
 }
 
+.head_section_inner {
+}
+
 .head_bg {
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -22,7 +24,29 @@
   right: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  picture {
+    width: calc(100% - 320px);
+  }
+}
+
+.head_bg_img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: top center;
+}
+
+.head_bg_svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 320px;
+  object-fit: contain;
+  object-position: bottom;
 }
 
 .head_section_content {
@@ -67,6 +91,20 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .head_bg {
+    justify-content: center;
+
+    picture {
+      width: 100%;
+    }
+  }
+
+  .head_bg_svg {
+    display: none;
+  }
+}
+
 .family_section {
   padding-top: 96px;
   padding-bottom: 150px;
@@ -105,6 +143,7 @@
     font-weight: 700;
     line-height: 110%;
     margin-bottom: 40px;
+
     a:hover {
       color: #ed6506;
     }
@@ -133,6 +172,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 
   &:not(:last-child) {
     margin-bottom: 64px;
@@ -183,7 +223,9 @@
     margin-bottom: 30px;
 
     span {
-      margin-top: 8px;
+      &:not(:empty) {
+        margin-top: 8px;
+      }
     }
   }
 }
@@ -191,13 +233,15 @@
 .one_img {
   span {
     display: block;
-    margin-top: 12px;
     color: #000;
     text-align: center;
     font-size: 14px;
     font-style: italic;
     font-weight: 500;
     line-height: 140%;
+    &:not(:empty) {
+      margin-top: 12px;
+    }
   }
 }
 
@@ -259,6 +303,10 @@
   margin-right: calc(-444px + -96px);
   margin-top: 64px;
   margin-left: -22px;
+}
+
+.family_tree_mobile {
+  display: none;
 }
 
 .family_tree_img {
@@ -543,10 +591,11 @@
   font-weight: 500;
   line-height: 140%;
   width: 100%;
-  margin-top: 16px;
   // margin-top: 40px;
-  margin-top: 16px;
   flex: 0 0 auto;
+  &:not(:empty) {
+    margin-top: 16px;
+  }
 }
 
 .swiper-pagination-bullet {
@@ -701,6 +750,7 @@
 @media screen and (max-width: 991px) {
   .head_section_content {
     padding-left: 32px;
+    max-width: fit-content;
   }
 
   .head_section_content h1 {
@@ -709,6 +759,19 @@
 }
 
 @media screen and (max-width: 767px) {
+  .family_tree {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+
+  .family_tree_desktop {
+    display: none;
+  }
+
+  .family_tree_mobile {
+    display: block;
+  }
+
   .quote {
     flex-direction: column;
     padding-top: 34px;
@@ -746,9 +809,15 @@
 }
 
 @media screen and (max-width: 575px) {
+  .family_tree {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
   .family_tree_bg {
     left: 0;
   }
+
   .family_block_content h2 {
     font-size: 24px;
     margin-bottom: 24px;
@@ -802,19 +871,29 @@
   }
 
   .head_section_content {
-    padding: 24px;
+    padding: 24px 24px 32px;
+    max-width: 100%;
 
     .subtitle {
-      font-size: 14px;
+      margin-bottom: 16px;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 48px;
     }
   }
 
-  .family_tree {
-    margin-left: 0;
+  .head_bg {
+    height: calc(100% - 200px);
+  }
+
+  .head_section {
+    min-height: 600px;
+    padding-bottom: 16px;
+  }
+
+  .head_section_content_inner h1 {
+    font-size: 32px;
   }
 }
 
