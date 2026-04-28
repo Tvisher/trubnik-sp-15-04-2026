@@ -91,6 +91,28 @@
   }
 }
 
+.custom-row {
+  display: flex;
+  align-items: center;
+}
+
+.custom-coll {
+  display: flex;
+  align-items: center;
+}
+
+.custom-coll .gallery_item {
+  width: 100%;
+  height: auto;
+}
+
+.custom-coll-30 {
+  width: 30%;
+}
+.custom-coll-40 {
+  width: 40%;
+}
+
 @media screen and (max-width: 1200px) {
   .head_bg {
     justify-content: center;
@@ -194,6 +216,12 @@
   margin-right: calc(-444px + -96px);
   z-index: 1;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .custom-coll {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 768px) {
