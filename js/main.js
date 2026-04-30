@@ -5,10 +5,12 @@ document.addEventListener('click', (e) => {
     const target = e.target;
     if (target.closest('.header__menu')) {
         sidebarMenu.classList.add('show')
+        document.body.classList.add('hidden');
     }
 
     if ((target.closest('.sidebar-menu') && !target.closest('.sidebar-menu__content')) || target.closest('.close-btn')) {
         sidebarMenu.classList.remove('show')
+        document.body.classList.remove('hidden');
     }
 
 
